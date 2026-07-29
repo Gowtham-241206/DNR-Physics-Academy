@@ -38,19 +38,15 @@ export default function Navbar({ onOpenCounselling }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Brand Identity */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group cursor-pointer">
-            <div className="w-10 h-10 rounded-md bg-[var(--bg-academic-navy)] text-[var(--accent-gold)] flex items-center justify-center font-heading text-2xl border border-[var(--accent-gold)]/30 shadow-xs group-hover:bg-[var(--bg-academic-navy-subtle)] transition-colors">
-              DNR
-            </div>
-            <div>
-              <span className="block font-heading text-xl sm:text-2xl text-[var(--bg-academic-navy)] leading-none tracking-tight">
-                DNR Physics
-              </span>
-              <span className="block text-[10px] tracking-[0.15em] text-[var(--accent-primary)] uppercase font-mono font-bold mt-1">
-                Physics Simplified
-              </span>
-            </div>
+          {/* Brand Identity - Text Mark Only */}
+          <a href="#" className="flex flex-col shrink-0 group cursor-pointer">
+            <span className="font-heading text-2xl sm:text-3xl leading-none tracking-tight text-[var(--bg-academic-navy)]">
+              <strong className="font-bold text-[var(--bg-academic-navy)]">DNR</strong>{" "}
+              <span className="font-normal italic text-[var(--accent-primary)]">Physics</span>
+            </span>
+            <span className="text-[10px] tracking-[0.18em] text-[var(--text-muted)] uppercase font-mono font-bold mt-1">
+              Physics Simplified
+            </span>
           </a>
 
           {/* Desktop Nav Links */}

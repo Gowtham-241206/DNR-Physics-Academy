@@ -13,20 +13,16 @@ export default function Footer() {
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
-          {/* Logo & Philosophy (5 cols) */}
+          {/* Logo & Philosophy (5 cols) - Text Mark Only */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-[var(--accent-primary)] text-white flex items-center justify-center font-heading font-normal text-2xl shadow-xs">
-                DNR
-              </div>
-              <div>
-                <span className="block font-heading text-2xl font-normal tracking-tight text-white leading-none">
-                  DNR Physics
-                </span>
-                <span className="block text-[10px] tracking-[0.15em] text-[var(--accent-gold)] uppercase font-mono font-bold mt-1">
-                  Physics Simplified • Estd. 2017
-                </span>
-              </div>
+            <div className="flex flex-col">
+              <span className="font-heading text-3xl sm:text-4xl tracking-tight text-white leading-none">
+                <strong className="font-bold text-white">DNR</strong>{" "}
+                <span className="font-normal italic text-[var(--accent-gold)]">Physics</span>
+              </span>
+              <span className="block text-[10px] tracking-[0.18em] text-[var(--accent-gold)] uppercase font-mono font-bold mt-1.5">
+                Physics Simplified • Estd. 2017
+              </span>
             </div>
 
             <p className="font-body text-xs text-[var(--text-light)]/70 max-prose-copy leading-relaxed">
