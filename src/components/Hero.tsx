@@ -21,7 +21,7 @@ export default function Hero({ onOpenCounselling }: HeroProps) {
     <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-ambient-radial border-b border-[var(--border-subtle)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* Top Label */}
+        {/* Top Label
         <div className="text-center mb-6 animate-reveal">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-xs">
             <IconAward size={14} className="text-[var(--accent-primary)]" strokeWidth={1.75} />
@@ -29,7 +29,7 @@ export default function Hero({ onOpenCounselling }: HeroProps) {
               Ranganath Dharmavaram • The Physics Specialist of Nellore
             </span>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Headline */}
         <div className="text-center max-w-5xl mx-auto mb-8 animate-reveal delay-1">

@@ -88,8 +88,8 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
           </div>
 
           {/* Right Column: Clean Form Container */}
-          <div className="lg:col-span-7">
-            <div className="bg-[var(--bg-canvas)] rounded-md p-6 sm:p-10 border border-[var(--border-subtle)] shadow-xs max-form-width mx-auto lg:max-w-none">
+          <div className="lg:col-span-7 w-full">
+            <div className="bg-[var(--bg-canvas)] rounded-md p-6 sm:p-10 border border-[var(--border-subtle)] shadow-xs w-full max-w-2xl mx-auto lg:max-w-none">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-[var(--bg-academic-navy)] text-[var(--accent-gold)] flex items-center justify-center mx-auto shadow-xs">
@@ -103,7 +103,7 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="inline-block mt-4 px-6 py-2.5 rounded-sm bg-[var(--bg-academic-navy)] text-[var(--text-light)] text-xs font-mono font-bold uppercase tracking-[0.12em] cursor-pointer"
+                    className="inline-block mt-4 px-6 py-2.5 rounded-sm bg-[var(--bg-academic-navy)] text-[var(--text-light)] text-xs font-mono font-bold uppercase tracking-[0.12em] cursor-pointer hover:bg-[var(--accent-primary)] transition-colors"
                   >
                     Submit Another Inquiry
                   </button>
@@ -133,7 +133,7 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                           placeholder="e.g. Ramesh Kumar"
                           value={formData.name}
                           onChange={e => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full pl-10 pr-4 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-sm text-[var(--bg-academic-navy)] font-body focus:outline-none focus:border-[var(--bg-academic-navy)] transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-sm text-[var(--bg-academic-navy)] font-body focus:outline-none focus:border-[var(--bg-academic-navy)] focus:ring-1 focus:ring-[var(--bg-academic-navy)] transition-all"
                         />
                       </div>
                     </div>
@@ -151,13 +151,13 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                           placeholder="+91 98480 00000"
                           value={formData.phone}
                           onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full pl-10 pr-4 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-sm text-[var(--bg-academic-navy)] font-mono focus:outline-none focus:border-[var(--bg-academic-navy)] transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-sm text-[var(--bg-academic-navy)] font-mono focus:outline-none focus:border-[var(--bg-academic-navy)] focus:ring-1 focus:ring-[var(--bg-academic-navy)] transition-all"
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                     {/* Class */}
                     <div>
                       <label className="block text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[var(--bg-academic-navy)] mb-2">
@@ -166,7 +166,7 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                       <select
                         value={formData.studentClass}
                         onChange={e => setFormData({ ...formData, studentClass: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)]"
+                        className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)] cursor-pointer"
                       >
                         <option value="Class 11">Class 11</option>
                         <option value="Class 12">Class 12</option>
@@ -183,7 +183,7 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                       <select
                         value={formData.targetExam}
                         onChange={e => setFormData({ ...formData, targetExam: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)]"
+                        className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)] cursor-pointer"
                       >
                         <option value="IIT-JEE Advanced">IIT-JEE Advanced</option>
                         <option value="IIT-JEE Main">IIT-JEE Main</option>
@@ -194,14 +194,14 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                     </div>
 
                     {/* Learning Mode */}
-                    <div>
+                    <div className="sm:col-span-2 md:col-span-1">
                       <label className="block text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[var(--bg-academic-navy)] mb-2">
                         Preferred Mode
                       </label>
                       <select
                         value={formData.mode}
                         onChange={e => setFormData({ ...formData, mode: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)]"
+                        className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)] cursor-pointer"
                       >
                         <option value="Offline (Nellore Centre)">Offline (Nellore)</option>
                         <option value="Online Live Interactive">Online Live</option>
