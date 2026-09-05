@@ -21,9 +21,10 @@ export default function Navbar({ onOpenCounselling }: NavbarProps) {
 
   const navLinks = [
     { name: "Why DNR", href: "#why-trust" },
-    { name: "Educator", href: "#educator" },
+    { name: "Educator & Books", href: "#educator" },
     { name: "Philosophy", href: "#philosophy" },
     { name: "Courses", href: "#courses" },
+    { name: "Results", href: "#testimonials" },
     { name: "Location", href: "#location" },
   ];
 
@@ -77,7 +78,7 @@ export default function Navbar({ onOpenCounselling }: NavbarProps) {
               onClick={onOpenCounselling}
               className="inline-flex items-center justify-center px-4 py-2.5 rounded-md bg-[var(--bg-academic-navy)] text-[var(--text-light)] text-xs font-mono font-bold uppercase tracking-[0.12em] hover:bg-[var(--accent-primary)] transition-colors shadow-xs border border-[var(--bg-academic-navy)] cursor-pointer"
             >
-              Book Free Counselling
+              Contact Tutor
             </button>
           </div>
 
@@ -124,7 +125,7 @@ export default function Navbar({ onOpenCounselling }: NavbarProps) {
               }}
               className="flex items-center justify-center py-2.5 rounded-md bg-[var(--bg-academic-navy)] text-[var(--text-light)] font-mono font-bold text-xs uppercase tracking-[0.12em] shadow-xs cursor-pointer"
             >
-              Book Free Counselling
+              Contact Tutor
             </button>
           </div>
         </div>

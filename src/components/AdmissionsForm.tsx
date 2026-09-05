@@ -20,7 +20,7 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
     name: "",
     phone: "",
     studentClass: "Class 11",
-    targetExam: "IIT-JEE Advanced",
+    targetExam: "JEE - ADVANCED",
     mode: "Offline (Nellore Centre)",
     message: "",
   });
@@ -57,7 +57,7 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                 <IconShield size={20} className="text-[var(--accent-primary)] shrink-0 mt-0.5" strokeWidth={1.75} />
                 <div>
                   <h4 className="font-heading font-normal text-2xl text-[var(--bg-academic-navy)]">
-                    Strict Batch Limits (30–40 Students)
+                    Strict Batch Limits (Limited Number of Students)
                   </h4>
                   <p className="font-body text-xs text-[var(--text-muted)] mt-0.5 leading-relaxed max-prose-copy">
                     Admissions are strictly on a first-cum-evaluation basis to preserve our small batch individual attention model.
@@ -171,7 +171,9 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                         <option value="Class 11">Class 11</option>
                         <option value="Class 12">Class 12</option>
                         <option value="Repeater / Dropper">Repeater / Dropper</option>
-                        <option value="Class 10 (Foundation)">Class 10 (Foundation)</option>
+                        <option value="Class 10 (CBSE Foundation)">Class 10 (CBSE Foundation)</option>
+                        <option value="Class 9 (CBSE Foundation)">Class 9 (CBSE Foundation)</option>
+                        <option value="Class 8 (CBSE Foundation)">Class 8 (CBSE Foundation)</option>
                       </select>
                     </div>
 
@@ -185,11 +187,11 @@ export default function AdmissionsForm({ id = "admissions" }: AdmissionsFormProp
                         onChange={e => setFormData({ ...formData, targetExam: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-body text-[var(--bg-academic-navy)] focus:outline-none focus:border-[var(--bg-academic-navy)] cursor-pointer"
                       >
-                        <option value="IIT-JEE Advanced">IIT-JEE Advanced</option>
+                        <option value="JEE - ADVANCED">JEE - ADVANCED</option>
                         <option value="IIT-JEE Main">IIT-JEE Main</option>
                         <option value="NEET Medical">NEET Medical</option>
                         <option value="BITSAT">BITSAT</option>
-                        <option value="State Competitive">State Competitive</option>
+                        <option value="JEE / NEET Foundation (8th, 9th & 10th CBSE)">JEE / NEET Foundation (8th, 9th & 10th CBSE)</option>
                       </select>
                     </div>
 

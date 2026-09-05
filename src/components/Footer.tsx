@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
 
             <p className="font-body text-xs text-[var(--text-light)]/70 max-prose-copy leading-relaxed">
-              An independent Physics coaching institute run personally by senior educator <strong className="text-white">Ranganath Dharmavaram</strong> (36+ years experience since 1988). Dedicated to small batch concept clarity for IIT-JEE, NEET, and BITSAT in Nellore.
+              An independent Physics coaching institute run personally by senior educator <strong className="text-white">Ranganath Dharmavaram</strong> (teaching since 1989). Dedicated to concept clarity for a limited number of students targeting JEE - ADVANCED, IIT-JEE Main, NEET, and BITSAT in Nellore.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#educator" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
-                  Meet Ranganath Dharmavaram
+                  Meet Ranganath Dharmavaram & Books
                 </a>
               </li>
               <li>
@@ -53,22 +53,17 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#courses" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
-                  IIT-JEE, NEET & BITSAT Courses
+                  JEE - ADVANCED, NEET & Foundation Courses
                 </a>
               </li>
               <li>
-                <a href="#journey" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
-                  DNR Student Journey
+                <a href="#testimonials" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
+                  Parent Reviews & Student Results
                 </a>
               </li>
               <li>
-                <a href="#books" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
-                  Authored Textbooks
-                </a>
-              </li>
-              <li>
-                <a href="#location" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
-                  Institute Location & Map
+                <a href="#contact" className="hover:text-[var(--accent-gold)] transition-colors cursor-pointer">
+                  Contact Tutor & Center Map
                 </a>
               </li>
             </ul>

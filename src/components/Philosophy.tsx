@@ -60,38 +60,30 @@ export default function Philosophy() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-[11px] font-mono font-bold uppercase tracking-[0.15em] text-[var(--accent-gold)] block mb-3">
-            Core Pedagogy
-          </span>
+        <div className="max-w-3xl mb-12">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight leading-none text-white">
-            Our Teaching Philosophy
+            Teaching Philosophy
           </h2>
           <p className="mt-3 font-body text-base text-[var(--text-light)]/70 max-prose-copy">
-            Why memorizing formulas fails in competitive exams—and why conceptual clarity guarantees lifelong rank success.
+            Why conceptual clarity and visualization guarantee lifelong mastery over formula memorization.
           </p>
         </div>
 
-        {/* Large Editorial Quote Banner */}
-        <div className="mb-20 pb-12 border-b border-white/10">
+        {/* Editorial Quote */}
+        <div className="mb-16 pb-10 border-b border-white/10">
           <blockquote className="font-heading text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight max-w-4xl text-white">
             Physics is not about memorizing formulas. It is about understanding <span className="text-[var(--accent-gold)] italic">why they work</span>.
           </blockquote>
-          <span className="block mt-6 text-xs font-mono font-bold uppercase tracking-[0.15em] text-[var(--accent-gold)]">
-            — Ranganath Dharmavaram • Senior Physics Educator
+          <span className="block mt-4 text-xs font-mono text-[var(--accent-gold)]">
+            — Ranganath Dharmavaram
           </span>
         </div>
 
-        {/* 5-Step Process Track - Minimalist Flow */}
-        <div className="mb-20">
-          <div className="mb-8 flex items-center justify-between">
-            <h3 className="font-heading text-3xl font-normal text-white">
-              The 5-Stage Conceptual Ascent
-            </h3>
-            <span className="text-[11px] font-mono font-bold uppercase tracking-[0.15em] text-[var(--accent-gold)]">
-              From Curiosity to Exam Supremacy
-            </span>
-          </div>
+        {/* 5-Step Process Track */}
+        <div className="mb-16">
+          <h3 className="font-heading text-2xl sm:text-3xl font-normal text-white mb-8">
+            The 5-Stage Conceptual Ascent
+          </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {steps.map((step, index) => {
@@ -99,21 +91,18 @@ export default function Philosophy() {
               return (
                 <div
                   key={step.name}
-                  className="relative pt-6 border-t border-white/15 group"
+                  className="relative pt-5 border-t border-white/15 group"
                 >
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-2">
                     <span className="font-mono text-xs font-bold text-[var(--accent-gold)]">
                       0{index + 1}
                     </span>
                     <IconComponent size={18} className="text-[var(--accent-gold)]" strokeWidth={1.75} />
                   </div>
 
-                  <h4 className="font-heading text-2xl text-white mb-1 font-normal">
+                  <h4 className="font-heading text-xl text-white mb-1.5 font-normal">
                     {step.name}
                   </h4>
-                  <p className="text-[10px] font-mono font-bold uppercase tracking-[0.14em] text-[var(--accent-gold)] mb-2">
-                    {step.subtitle}
-                  </p>
                   <p className="font-body text-xs text-[var(--text-light)]/70 leading-relaxed">
                     {step.desc}
                   </p>
@@ -137,12 +126,12 @@ export default function Philosophy() {
                 className="object-cover"
               />
             </div>
-            <div className="flex items-center justify-between text-xs text-[var(--text-light)]/70 px-1 font-mono">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-[var(--text-light)]/70 px-1 font-mono">
               <span className="flex items-center gap-1.5">
-                <IconFileText size={14} className="text-[var(--accent-gold)]" strokeWidth={1.75} />
+                <IconFileText size={14} className="text-[var(--accent-gold)] shrink-0" strokeWidth={1.75} />
                 <span>Authentic Lecture Notes & Ray Tracing</span>
               </span>
-              <span className="text-[var(--accent-gold)]">DNR Physics Archives</span>
+              <span className="text-[var(--accent-gold)] pl-5 sm:pl-0">DNR Physics Archives</span>
             </div>
           </div>
 
@@ -158,27 +147,27 @@ export default function Philosophy() {
             </div>
 
             {/* Toggle buttons */}
-            <div className="flex rounded-md bg-[var(--bg-academic-navy-subtle)] p-1 border border-white/10">
+            <div className="flex flex-col sm:flex-row rounded-md bg-[var(--bg-academic-navy-subtle)] p-1 border border-white/10 gap-1 sm:gap-0">
               <button
                 onClick={() => setActiveTab("visualization")}
-                className={`flex-1 py-2.5 text-xs font-mono font-bold uppercase tracking-[0.12em] rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer ${
+                className={`flex-1 py-2.5 px-3 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.08em] sm:tracking-[0.12em] rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer ${
                   activeTab === "visualization"
                     ? "bg-[var(--accent-primary)] text-white shadow-xs"
                     : "text-[var(--text-light)]/70 hover:text-white"
                 }`}
               >
-                <IconSparkles size={14} strokeWidth={1.75} />
+                <IconSparkles size={14} className="shrink-0" strokeWidth={1.75} />
                 <span>DNR Visualization Method</span>
               </button>
               <button
                 onClick={() => setActiveTab("memorization")}
-                className={`flex-1 py-2.5 text-xs font-mono font-bold uppercase tracking-[0.12em] rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer ${
+                className={`flex-1 py-2.5 px-3 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.08em] sm:tracking-[0.12em] rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer ${
                   activeTab === "memorization"
                     ? "bg-[var(--accent-primary)] text-white shadow-xs"
                     : "text-[var(--text-light)]/70 hover:text-white"
                 }`}
               >
-                <IconHelpCircle size={14} strokeWidth={1.75} />
+                <IconHelpCircle size={14} className="shrink-0" strokeWidth={1.75} />
                 <span>Typical Formula Memorization</span>
               </button>
             </div>

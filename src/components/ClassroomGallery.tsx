@@ -126,8 +126,8 @@ export default function ClassroomGallery() {
         {/* Feature Highlights Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 p-4 md:p-6 rounded-md bg-[var(--bg-academic-navy-subtle)]/70 border border-white/10 backdrop-blur-xs">
           <div className="p-2 sm:p-3 text-center sm:text-left">
-            <span className="block font-heading text-2xl sm:text-3xl text-[var(--accent-gold)] font-normal">30–40 Max</span>
-            <span className="font-mono text-[10px] text-[var(--text-light)]/70 uppercase tracking-wider block mt-0.5">Strict Batch Limit</span>
+            <span className="block font-heading text-2xl sm:text-3xl text-[var(--accent-gold)] font-normal">Limited</span>
+            <span className="font-mono text-[10px] text-[var(--text-light)]/70 uppercase tracking-wider block mt-0.5">Limited Number of Students</span>
           </div>
           <div className="p-2 sm:p-3 text-center sm:text-left sm:border-l border-white/10">
             <span className="block font-heading text-2xl sm:text-3xl text-[var(--accent-gold)] font-normal">Daily DPPs</span>

@@ -1,152 +1,289 @@
 "use client";
 
-import { IconQuote, IconHandshake, IconAward, IconShield } from "./CustomIcons";
+import { IconQuote, IconHandshake, IconAward, IconShield, IconBuilding, IconStar } from "./CustomIcons";
 
 export default function Testimonials() {
-  const parentTestimonials = [
-    {
-      name: "Dr. K. Venkatrao",
-      relation: "Parent of Sai Charan (IIT-JEE Adv AIR 842)",
-      profession: "Senior Consultant Surgeon, Nellore",
-      text: "Sending our son to DNR Physics was the single best decision we made for his competitive preparation. Unlike large institutes where students are treated as roll numbers, Ranganath Sir gave personal attention to every test paper. My son went from fearing Physics mechanics to scoring 98/120 in JEE Advanced Physics.",
-    },
-    {
-      name: "Smt. S. Lakshmi Devi",
-      relation: "Parent of Ananya (NEET 685/720 - Physics 175/180)",
-      profession: "High School Teacher, Nellore",
-      text: "As a teacher myself, I deeply appreciate Ranganath Sir's patient pedagogy. He never rushed through chapters just to complete syllabus. He ensured Ananya built rock-solid concept clarity, which reflected directly in her NEET Physics score of 175 out of 180.",
-    },
-    {
-      name: "M. Subrahmanyam",
-      relation: "Parent of Vignesh (BITSAT 362 - Computer Science, BITS Pilani)",
-      profession: "Bank Branch Manager, Nellore",
-      text: "The small batch size of 20 students meant Vignesh could never hide his doubts. Ranganath Sir identified his calculation speed issues early and corrected them through personal mentorship. Parents can completely trust DNR Physics.",
-    }
-  ];
+  const institutionalEndorsement = {
+    quote: [
+      "It is both a privilege and a matter of great pride to recognize the invaluable contribution of Mr. D. N. Ranganath Rao to Rainbow, one of the fastest growing institutions in Nellore. Over the past three years, he has brought exceptional academic rigour, remarkable clarity, and a rare depth of insight into the teaching of Physics for our IIT–JEE aspirants.",
+      "His distinctive ability to deconstruct complex concepts into lucid and engaging learning experiences has consistently empowered students to excel. His influence extends far beyond the classroom—his mentorship has shaped many of our senior students who today stand as part of our accomplished alumni, carrying forward the legacy of excellence he has helped build.",
+      "With an association spanning over two decades, his journey stands as a testament to unwavering integrity, intellectual brilliance, and an enduring passion for education. He is not merely a faculty member, but a transformative force who inspires, mentors and elevates every learner he engages with.",
+      "Rainbow is truly enriched by his presence."
+    ],
+    name: "Mrs Padma Subrahmanyam",
+    title: "Director",
+    institution: "Rainbow School, Nellore"
+  };
 
-  const studentStories = [
+  const holisticMentorship = {
+    name: "Parent of Physics Student",
+    relation: "Holistic Mentorship",
+    profession: "Endorsement of Academic & Moral Foundations",
+    text: "My son had the privilege of taking physics coaching under Ranganath whose erudition and integrity have always set a benchmark for excellence. His vision of an educational institution that blends rigorous academics with strong moral and ethical foundations is both timely and inspiring. I’ve witnessed firsthand his ability to nurture curiosity while instilling values like empathy, responsibility, and respect. Any student who walks through those doors will benefit from a learning environment that shapes not just bright minds, but also compassionate, principled individuals. I wholeheartedly endorse his mission and look forward to seeing this institution become a beacon of holistic education.",
+  };
+
+  const googleReviews = [
     {
-      name: "P. Harshavardhan",
-      exam: "IIT-JEE Advanced • AIR 614",
-      branch: "B.Tech Computer Science, IIT Madras",
-      quote: "Before joining DNR Physics in Class 11, I used to memorize Physics formulas blindly and struggle with JEE Advanced numericals. Ranganath Sir taught me how to derive concepts from first principles. That intuitive clarity changed everything.",
+      name: "Dr. Sashibhushan Reddy (Sasi Reddy)",
+      tag: "EAMCET 2005 • State 8th Rank",
+      role: "Orthopedic Surgeon, Sashi Ortho & Multispeciality Hospital, Piler",
+      highlight: true,
+      text: "Great physics lecturer DN Ranganath sir... I am Dr Sashibhushan Reddy orthopedic surgeon running Sashi Ortho and multispeciality hospital in Piler. I got 8th rank with top marks in physics in EAMCET 2005.. it's only because of DNR sir..",
     },
     {
-      name: "K. Mythili",
-      exam: "NEET • Physics Score 172 / 180",
-      branch: "MBBS, JIPMER Puducherry",
-      quote: "Medical students often fear Physics calculus. Ranganath Sir simplified rotational dynamics and wave optics into simple visual diagrams. His small batch environment gave me the courage to ask every single doubt without hesitation.",
+      name: "Dr. Bhanu Prakash",
+      tag: "Medical Entrance Achiever",
+      role: "Dental Surgeon",
+      highlight: true,
+      text: "Became successful dental surgeon bcoz of ur physics sir tq very much . I can recommend any student whoever interested to be a part of this academy for bright future.",
     },
     {
-      name: "T. Rithvik Reddi",
-      exam: "IIT-JEE Main • 99.86 Percentile in Physics",
-      branch: "B.Tech Electrical Engg, NIT Trichy",
-      quote: "The weekly error analysis ledgers at DNR Physics were a game-changer. Ranganath Sir personally sat with me after every test to review why I lost marks in 2 numericals. That level of dedicated mentoring is nonexistent anywhere else.",
+      name: "Vyshnavi K",
+      tag: "Competitive Exam Physics",
+      role: "Competitive Exam Aspirant",
+      highlight: false,
+      text: "Best training for physics is given here especially for competitive exams. Concepts are explained in a very clear manner. Expertise of Sir shines through...",
+    },
+    {
+      name: "Charan Kanduri",
+      tag: "Exam Environment",
+      role: "Physics Student",
+      highlight: false,
+      text: "DNR physics Academy offers best environment to learn physics and guides to crack competative exams with ease.",
+    },
+    {
+      name: "Nithyasree Karanam",
+      tag: "Physics Simplified",
+      role: "Student Review",
+      highlight: false,
+      text: "A really wonderful teacher who makes physics very simplified and easy to understand.",
+    },
+    {
+      name: "Sid Reddy",
+      tag: "Conceptual Clarity",
+      role: "Alumni Review",
+      highlight: false,
+      text: "This place redefines physics :)",
     }
   ];
 
   return (
     <section id="testimonials" className="py-20 md:py-28 bg-[var(--bg-canvas)] relative border-b border-[var(--border-subtle)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-[11px] font-mono font-bold uppercase tracking-[0.15em] text-[var(--accent-primary)] block mb-2">
-            Authentic Voices
-          </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">        {/* Header */}
+        <div className="max-w-3xl mb-12">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-[var(--bg-academic-navy)] leading-none tracking-tight">
-            Parents & Students Speak
+            Institutional Trust & Verified Reviews
           </h2>
           <p className="mt-3 font-body text-base text-[var(--text-muted)] max-prose-copy">
-            Genuine experiences from parents who trusted DNR Physics and students who transformed their conceptual understanding.
+            Genuine reflections from school leadership, parents, alumni doctors, and students on over 35 years of conceptual teaching.
           </p>
         </div>
 
-        {/* PART 1: Parents First */}
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-8 pb-3 border-b border-[var(--border-subtle)]">
-            <IconHandshake size={20} className="text-[var(--accent-primary)]" strokeWidth={1.75} />
-            <h3 className="font-heading text-3xl text-[var(--bg-academic-navy)] font-normal">
-              Parents’ Perspectives & Trust
-            </h3>
-            <span className="text-[10px] font-mono font-bold text-[var(--accent-primary)] uppercase tracking-[0.15em] bg-[var(--accent-primary)]/10 px-3 py-0.5 rounded-sm border border-[var(--accent-primary)]/20 ml-auto">
-              Verified Feedback
-            </span>
-          </div>
+        {/* 1. FEATURED: Institutional Recommendation from Rainbow School */}
+        <div className="mb-12">
+          <div className="bg-[var(--bg-academic-navy)] text-[var(--text-light)] rounded-xl p-8 sm:p-12 border border-[var(--bg-academic-navy)] shadow-md relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none hidden md:block">
+              <IconQuote size={140} strokeWidth={1} />
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 divide-y lg:divide-y-0 lg:divide-x divide-[var(--border-subtle)]">
-            {parentTestimonials.map((parent, idx) => (
-              <div
-                key={parent.name}
-                className={`flex flex-col justify-between ${idx !== 0 ? "pt-8 lg:pt-0 lg:pl-10" : ""}`}
-              >
-                <div>
-                  <IconQuote size={28} className="text-[var(--accent-primary)]/40 mb-3" strokeWidth={1.5} />
-                  <p className="font-body text-sm text-[var(--text-main)] leading-relaxed mb-6 italic max-prose-copy">
-                    &ldquo;{parent.text}&rdquo;
-                  </p>
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent-primary)] text-white text-[11px] font-mono font-bold uppercase tracking-[0.12em] rounded-sm">
+                  <IconBuilding size={14} strokeWidth={1.75} />
+                  <span>Institutional Endorsement</span>
                 </div>
+                <span className="text-xs font-mono text-[var(--accent-gold)]">
+                  Association Over Two Decades
+                </span>
+              </div>
 
-                <div className="pt-4 border-t border-[var(--border-subtle)]">
-                  <h4 className="font-heading font-normal text-2xl text-[var(--bg-academic-navy)]">
-                    {parent.name}
-                  </h4>
-                  <p className="text-[10px] font-mono font-bold text-[var(--accent-primary)] uppercase tracking-[0.14em] mt-0.5">
-                    {parent.relation}
+              <div className="space-y-4 max-w-4xl text-sm sm:text-base font-body text-[var(--text-light)]/95 leading-relaxed italic">
+                {institutionalEndorsement.quote.map((p, i) => (
+                  <p key={i}>
+                    {i === 0 ? `“${p}` : p}
+                    {i === institutionalEndorsement.quote.length - 1 ? '”' : ''}
                   </p>
-                  <p className="font-body text-xs text-[var(--text-muted)] mt-0.5">
-                    {parent.profession}
+                ))}
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h4 className="font-heading font-normal text-2xl sm:text-3xl text-white">
+                    {institutionalEndorsement.name}
+                  </h4>
+                  <p className="text-xs font-mono text-[var(--accent-gold)] mt-0.5">
+                    {institutionalEndorsement.title} • {institutionalEndorsement.institution}
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
-        {/* PART 2: Students Second */}
+        {/* 2. FEATURED: Parent Endorsement */}
+        <div className="mb-16">
+          <div className="grid overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] shadow-md lg:grid-cols-12">
+            
+            {/* 2-Column Content Grid */}
+            <div className="contents">
+              
+              {/* Left Column: Testimonial & Quote (7 cols) */}
+              <div className="relative flex min-h-[430px] flex-col justify-between overflow-hidden bg-[var(--bg-academic-navy)] px-7 py-8 text-[var(--text-light)] sm:px-10 sm:py-11 lg:col-span-7">
+                <IconQuote size={210} strokeWidth={1} className="pointer-events-none absolute -right-10 -top-9 text-white/[0.07]" />
+                <div>
+                  <div className="relative inline-flex items-center gap-2 border border-[var(--accent-gold)]/40 bg-white/[0.06] px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-[0.16em] text-[var(--accent-gold)]">
+                    <IconHandshake size={14} strokeWidth={1.6} />
+                    <span>
+                      Parent perspective
+                    </span>
+                  </div>
+
+                  <p className="relative mt-8 max-w-2xl font-heading text-3xl leading-[1.08] text-white sm:text-4xl lg:text-[2.7rem]">
+                    &ldquo;A learning environment that shapes bright minds and principled individuals.&rdquo;
+                  </p>
+                  <div className="relative mt-7 h-px w-16 bg-[var(--accent-primary)]" />
+                  <p className="relative mt-7 max-w-2xl font-body text-sm leading-7 text-white/75 sm:text-[15px]">
+                    {holisticMentorship.text}
+                  </p>
+                </div>
+
+                <div className="relative mt-10 flex items-end justify-between gap-4 border-t border-white/15 pt-5">
+                  <div>
+                  <h4 className="font-heading text-2xl font-normal text-white">
+                    {holisticMentorship.name}
+                  </h4>
+                  <p className="mt-1 text-[10px] font-mono uppercase tracking-[0.08em] text-[var(--accent-gold)]">
+                    {holisticMentorship.relation}
+                  </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: What stands out */}
+              <aside className="relative flex flex-col bg-[var(--bg-surface-elevated)] px-7 py-8 sm:px-10 sm:py-11 lg:col-span-5">
+                <div className="absolute left-0 top-0 h-1 w-full bg-[var(--accent-primary)] lg:bottom-0 lg:top-auto lg:h-full lg:w-1" />
+                <div>
+                  <p className="text-[10px] font-mono font-bold uppercase tracking-[0.16em] text-[var(--accent-primary)]">What stands out</p>
+                  <h3 className="mt-3 max-w-sm font-heading text-3xl leading-none text-[var(--bg-academic-navy)] sm:text-4xl">Education with a wider purpose.</h3>
+                  <p className="mt-4 max-w-md font-body text-sm leading-6 text-[var(--text-muted)]">The qualities this parent sees in a learning experience built for the long term.</p>
+                </div>
+                <div className="mt-8 divide-y divide-[var(--border-accent)]/70 border-y border-[var(--border-accent)]/70">
+                  <div className="flex gap-4 py-5">
+                    <div className="flex h-8 w-8 rounded-full bg-[var(--bg-surface)] items-center justify-center shrink-0 shadow-sm">
+                      <IconAward size={16} className="text-[var(--accent-primary)]" strokeWidth={1.6} />
+                    </div>
+                    <div>
+                      <h5 className="font-heading text-xl text-[var(--bg-academic-navy)] font-normal leading-none">
+                        Academic depth
+                      </h5>
+                      <p className="font-body text-xs text-[var(--text-muted)] mt-2 leading-5">
+                        Rigour that helps students understand the why behind every concept.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 py-5">
+                    <div className="flex h-8 w-8 rounded-full bg-[var(--bg-surface)] items-center justify-center shrink-0 shadow-sm">
+                      <IconHandshake size={16} className="text-[var(--accent-primary)]" strokeWidth={1.6} />
+                    </div>
+                    <div>
+                      <h5 className="font-heading text-xl text-[var(--bg-academic-navy)] font-normal leading-none">
+                        Character matters
+                      </h5>
+                      <p className="font-body text-xs text-[var(--text-muted)] mt-2 leading-5">
+                        A learning culture rooted in empathy, responsibility, and respect.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 py-5">
+                    <div className="flex h-8 w-8 rounded-full bg-[var(--bg-surface)] items-center justify-center shrink-0 shadow-sm">
+                      <IconShield size={16} className="text-[var(--accent-primary)]" strokeWidth={1.6} />
+                    </div>
+                    <div>
+                      <h5 className="font-heading text-xl text-[var(--bg-academic-navy)] font-normal leading-none">
+                        Guidance with care
+                      </h5>
+                      <p className="font-body text-xs text-[var(--text-muted)] mt-2 leading-5">
+                        Mentorship designed to shape confident learners and grounded people.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-auto pt-8 text-[10px] font-mono uppercase tracking-[0.12em] text-[var(--text-muted)]">
+                  A Beacon of Holistic Education • DNR Physics
+                </div>
+              </aside>
+
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Verified Alumni & Student Reviews */}
         <div>
-          <div className="flex items-center gap-3 mb-8 pb-3 border-b border-[var(--border-subtle)]">
-            <IconAward size={20} className="text-[var(--accent-primary)]" strokeWidth={1.75} />
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-3 border-b border-[var(--border-subtle)]">
             <h3 className="font-heading text-3xl text-[var(--bg-academic-navy)] font-normal">
-              Student Transformation Stories
+              Alumni Doctors & Student Reviews
             </h3>
-            <span className="text-[10px] font-mono font-bold text-[var(--bg-academic-navy)] uppercase tracking-[0.15em] bg-[var(--bg-surface)] px-3 py-0.5 rounded-sm border border-[var(--border-subtle)] ml-auto">
-              Alumni Achievements
-            </span>
+            
+            <div className="inline-flex items-center gap-2 bg-[var(--bg-surface)] px-3.5 py-1.5 rounded-full border border-[var(--border-subtle)]">
+              <div className="flex items-center text-amber-500 gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <IconStar key={i} size={13} />
+                ))}
+              </div>
+              <span className="text-xs font-mono font-bold text-[var(--bg-academic-navy)]">
+                5.0 Google Rating
+              </span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {studentStories.map((student) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {googleReviews.map((review) => (
               <div
-                key={student.name}
-                className="bg-[var(--bg-academic-navy)] text-[var(--text-light)] rounded-md p-6 sm:p-8 border border-[var(--bg-academic-navy)] shadow-xs flex flex-col justify-between"
+                key={review.name}
+                className={`rounded-xl p-6 border transition-all flex flex-col justify-between ${
+                  review.highlight
+                    ? "bg-[var(--bg-academic-navy)] text-white border-2 border-[var(--accent-gold)]/60 shadow-md ring-1 ring-[var(--accent-gold)]/30 hover:border-[var(--accent-gold)]"
+                    : "bg-[var(--bg-surface)] text-[var(--text-main)] border border-[var(--border-subtle)] hover:border-[var(--accent-primary)]/50 shadow-xs"
+                }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="px-2.5 py-0.5 bg-[var(--accent-primary)] text-white text-[10px] font-mono font-bold uppercase tracking-[0.15em] rounded-sm">
-                      {student.exam}
-                    </span>
-                    <IconShield size={16} className="text-[var(--accent-gold)]" strokeWidth={1.75} />
+                    <div className="flex items-center text-amber-400 gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <IconStar key={i} size={review.highlight ? 13 : 12} />
+                      ))}
+                    </div>
+                    {review.highlight && (
+                      <span className="px-2.5 py-0.5 rounded-full bg-[var(--accent-gold)]/20 text-[var(--accent-gold)] border border-[var(--accent-gold)]/30 text-[10px] font-mono font-bold uppercase tracking-[0.1em]">
+                        Alumni Doctor
+                      </span>
+                    )}
                   </div>
 
-                  <p className="font-body text-sm text-[var(--text-light)]/90 leading-relaxed mb-6 font-light italic max-prose-copy">
-                    &ldquo;{student.quote}&rdquo;
+                  <p className={`font-body text-sm leading-relaxed mb-6 italic ${
+                    review.highlight ? "text-white/95 font-light" : "text-[var(--text-main)]"
+                  }`}>
+                    &ldquo;{review.text}&rdquo;
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10">
-                  <h4 className="font-heading font-normal text-2xl text-[var(--text-light)]">
-                    {student.name}
+                <div className={`pt-4 border-t ${review.highlight ? "border-white/15" : "border-[var(--border-subtle)]"}`}>
+                  <h4 className={`font-heading font-normal text-lg ${review.highlight ? "text-white" : "text-[var(--bg-academic-navy)]"}`}>
+                    {review.name}
                   </h4>
-                  <p className="text-xs text-[var(--accent-gold)] font-mono font-bold uppercase tracking-[0.12em] mt-0.5">
-                    {student.branch}
+                  <p className={`text-xs mt-0.5 ${
+                    review.highlight ? "text-[var(--accent-gold)] font-mono font-bold" : "text-[var(--text-muted)] font-body"
+                  }`}>
+                    {review.role}
                   </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

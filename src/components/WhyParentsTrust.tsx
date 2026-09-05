@@ -1,39 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { IconShield, IconMapPin } from "./CustomIcons";
+import { IconShield, IconMapPin, IconCheckCircle, IconUserCheck, IconAward, IconBookOpen } from "./CustomIcons";
 
 export default function WhyParentsTrust() {
-  const reasons = [
+  const pillars = [
     {
       num: "01",
+      icon: IconBookOpen,
       title: "Concept-First Teaching",
-      short: "Understanding 'Why' Before Applying 'How'",
-      desc: "We do not force students to memorize hundreds of formulas. We derive every physical concept from first principles so students can tackle any novel problem presented in IIT-JEE Advanced or NEET.",
+      short: "Understanding 'Why' Before 'How'",
+      desc: "Zero blind formula memorization. Every concept is derived from first principles so students effortlessly solve novel, twisted problems in JEE - ADVANCED and NEET.",
     },
     {
       num: "02",
-      title: "Uncompromised Individual Attention",
-      short: "Tracking Every Student's Analytical Progress",
-      desc: "In mass coaching factories, quiet students get left behind. Ranganath Dharmavaram personally reviews every student's error patterns, numerical speed, and conceptual blindspots.",
+      icon: IconUserCheck,
+      title: "Strictly Limited Batches",
+      short: "Limited Number of Students",
+      desc: "Our strictly limited batch size ensures every quiet student's doubts are heard, discussed, and resolved daily with direct faculty mentorship.",
     },
     {
       num: "03",
-      title: "Strictly Small Batches",
-      short: "Max 30–40 Students Across Entire Institute",
-      desc: "Quality education requires focus. By capping overall batch size, we maintain an interactive environment where students comfortably ask doubts without hesitation.",
+      icon: IconAward,
+      title: "100% Senior Faculty Delivery",
+      short: "Taught by Ranganath Dharmavaram",
+      desc: "No proxy tutors or junior faculty. Every single lecture, problem sheet, and test evaluation is personally conducted by Ranganath Sir with decades of mastery (Teaching since 1989).",
     },
     {
       num: "04",
-      title: "36+ Years Experienced Educator",
-      short: "Direct Instruction by Senior Faculty Only",
-      desc: "No junior proxy teachers or inexperienced guest tutors. Every single Physics lecture is personally planned and delivered by Ranganath Dharmavaram, who has taught since 1988.",
-    },
-    {
-      num: "05",
-      title: "Consistent Mentoring & Calm Guidance",
-      short: "Building Exam Confidence Without Panic",
-      desc: "Competitive exam prep is a marathon. We provide steady emotional and academic mentorship to ensure students remain disciplined, calm, and confident under exam pressure.",
+      icon: IconCheckCircle,
+      title: "Personal Error Ledger Audits",
+      short: "Individual Weakness Diagnosis",
+      desc: "We analyze each student's weekly test papers individually to eliminate algebraic slips, sign mistakes, and conceptual blindspots before actual entrance exams.",
     },
   ];
 
@@ -42,81 +40,78 @@ export default function WhyParentsTrust() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-[11px] font-mono font-bold uppercase tracking-[0.15em] text-[var(--accent-primary)] block mb-2">
-            The Trust Factor
-          </span>
+        <div className="max-w-3xl mb-12">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-[var(--bg-academic-navy)] leading-none tracking-tight">
             Why Parents Trust <br />
             <span className="italic text-[var(--accent-primary)] font-normal">DNR Physics</span> With Their Child’s Future
           </h2>
           <p className="mt-4 font-body text-base sm:text-lg text-[var(--text-muted)] leading-relaxed max-prose-copy">
-            In an era of commercial EdTech marketing and 200-student lecture halls, DNR Physics remains committed to genuine academic excellence and personal care.
+            Dedicated to personal care, focused batches with a limited number of students, and deep conceptual clarity.
           </p>
         </div>
 
-        {/* Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Editorial 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column - 5 Editorial Reasons */}
-          <div className="lg:col-span-7 divide-y divide-[var(--border-subtle)]">
-            {reasons.map((reason) => (
-              <div
-                key={reason.num}
-                className="py-8 first:pt-0 last:pb-0 group"
-              >
-                <div className="flex items-start gap-6">
-                  <span className="font-mono text-xl font-bold text-[var(--accent-primary)] group-hover:text-[var(--bg-academic-navy)] transition-colors shrink-0 mt-1">
-                    {reason.num}
-                  </span>
+          {/* Left Column: 4 Distinct Value Pillars */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {pillars.map((pillar) => {
+              const IconComp = pillar.icon;
+              return (
+                <div
+                  key={pillar.num}
+                  className="bg-[var(--bg-canvas)] rounded-lg p-6 border border-[var(--border-subtle)] shadow-xs flex flex-col justify-between hover:border-[var(--accent-primary)] transition-colors group"
+                >
                   <div>
-                    <h3 className="font-heading text-2xl sm:text-3xl text-[var(--bg-academic-navy)] leading-tight group-hover:text-[var(--accent-primary)] transition-colors">
-                      {reason.title}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-mono text-xs font-bold text-[var(--text-muted)]">
+                        {pillar.num}
+                      </span>
+                      <IconComp size={20} className="text-[var(--bg-academic-navy)] group-hover:text-[var(--accent-primary)] transition-colors" strokeWidth={1.75} />
+                    </div>
+
+                    <h3 className="font-heading text-2xl text-[var(--bg-academic-navy)] leading-tight mb-2 font-normal group-hover:text-[var(--accent-primary)] transition-colors">
+                      {pillar.title}
                     </h3>
-                    <p className="text-[10px] font-mono font-bold uppercase tracking-[0.14em] text-[var(--accent-primary)] mt-1 mb-2">
-                      {reason.short}
-                    </p>
-                    <p className="font-body text-sm sm:text-base text-[var(--text-muted)] leading-relaxed max-prose-copy">
-                      {reason.desc}
+                    <p className="font-body text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+                      {pillar.desc}
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Right Column - Classroom Photo Framing */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <div className="space-y-4">
-              <div className="relative aspect-[4/5] rounded-md overflow-hidden border border-[var(--border-subtle)] shadow-xs">
-                <Image
-                  src="/images/classroom_doubt_solving.png"
-                  alt="Ranganath Dharmavaram sitting with small batch of students explaining physics problem"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="pt-2">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <IconShield size={18} className="text-[var(--accent-primary)]" strokeWidth={1.75} />
-                  <span className="font-heading font-normal text-xl text-[var(--bg-academic-navy)]">
-                    The Small Batch Assurance
-                  </span>
-                </div>
-                <p className="font-body text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed max-prose-copy">
-                  Every evening batch is structured so that Ranganath Dharmavaram sits with students, observes how they write steps, and instantly corrects their conceptual flaws.
+          {/* Right Column: Framed Photo */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="relative aspect-[16/10] lg:aspect-[4/5] rounded-lg overflow-hidden border border-[var(--border-subtle)] shadow-md">
+              <Image
+                src="/images/classroom_doubt_solving.png"
+                alt="Ranganath Dharmavaram sitting with students explaining physics problem"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-academic-navy)]/80 via-transparent to-transparent" />
+              
+              <div className="absolute bottom-4 left-4 right-4 text-[var(--text-light)]">
+                <p className="font-heading text-base sm:text-lg leading-snug">
+                  Every student solves derivations side-by-side with Ranganath Sir.
                 </p>
               </div>
+            </div>
 
-              <div className="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs text-[var(--text-muted)] font-mono">
-                <span className="flex items-center gap-1.5 font-bold text-[var(--bg-academic-navy)] uppercase tracking-[0.1em]">
-                  <IconMapPin size={14} className="text-[var(--accent-primary)]" strokeWidth={1.75} />
-                  <span>Nellore Coaching Centre</span>
+            {/* Proof Strip */}
+            <div className="p-3.5 bg-[var(--bg-academic-navy)] text-[var(--text-light)] rounded-md flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <IconShield size={16} className="text-[var(--accent-gold)] shrink-0" strokeWidth={1.75} />
+                <span className="font-mono text-xs text-[var(--accent-gold)] font-bold">
+                  Mentorship Promise
                 </span>
-                <span className="font-bold text-[var(--bg-academic-navy)]">36+ Years Legacy</span>
               </div>
+              <span className="font-mono text-xs text-[var(--text-light)]/80">
+                Limited Number of Students
+              </span>
             </div>
           </div>
 

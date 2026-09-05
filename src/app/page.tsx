@@ -6,18 +6,14 @@ import WhyParentsTrust from "@/components/WhyParentsTrust";
 import MeetEducator from "@/components/MeetEducator";
 import Philosophy from "@/components/Philosophy";
 import Courses from "@/components/Courses";
-import StudentJourney from "@/components/StudentJourney";
-import Textbooks from "@/components/Textbooks";
-import ClassroomGallery from "@/components/ClassroomGallery";
 import Testimonials from "@/components/Testimonials";
-import AdmissionsForm from "@/components/AdmissionsForm";
 import LocationContact from "@/components/LocationContact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
-  const scrollToCounselling = () => {
-    const el = document.getElementById("admissions");
+  const scrollToContact = () => {
+    const el = document.getElementById("contact") || document.getElementById("location");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
@@ -26,42 +22,30 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-[var(--bg-canvas)]">
       {/* Navigation */}
-      <Navbar onOpenCounselling={scrollToCounselling} />
+      <Navbar onOpenCounselling={scrollToContact} />
 
-      {/* SECTION 1: Hero */}
-      <Hero onOpenCounselling={scrollToCounselling} />
+      {/* SECTION 1: Hero Header & Trust Stats */}
+      <Hero onOpenCounselling={scrollToContact} />
 
-      {/* SECTION 2: Why Parents Trust DNR Physics */}
+      {/* SECTION 2: Why Parents Trust DNR Physics (4 Distinct Pillars) */}
       <WhyParentsTrust />
 
-      {/* SECTION 3: Meet The Educator (Ranganath Dharmavaram) */}
+      {/* SECTION 3: Meet The Educator & Authored Textbooks */}
       <MeetEducator />
 
-      {/* SECTION 4: Teaching Philosophy */}
+      {/* SECTION 4: Teaching Philosophy (5-Stage Ascent & Intuition Matrix) */}
       <Philosophy />
 
-      {/* SECTION 5: Courses (IIT-JEE, NEET, BITSAT, Foundation) */}
-      <Courses onOpenCounselling={scrollToCounselling} />
+      {/* SECTION 5: Specialized Courses (IIT-JEE, NEET, BITSAT, Foundation) */}
+      <Courses onOpenCounselling={scrollToContact} />
 
-      {/* SECTION 6: Student Journey */}
-      <StudentJourney />
-
-      {/* SECTION 7: Authored Physics Books */}
-      <Textbooks />
-
-      {/* SECTION 8: Inside The Classroom Gallery */}
-      <ClassroomGallery />
-
-      {/* SECTION 9: Testimonials (Parents first, Students second) */}
+      {/* SECTION 6: Testimonials & Verified Student Achievements */}
       <Testimonials />
 
-      {/* SECTION 10: Admissions & Counselling Form */}
-      <AdmissionsForm id="admissions" />
-
-      {/* SECTION 11: Location, Office Hours & Google Maps */}
+      {/* SECTION 7: Tutor Direct Contact, Office Hours & Interactive Map */}
       <LocationContact />
 
-      {/* SECTION 12: Footer */}
+      {/* SECTION 8: Footer */}
       <Footer />
 
       {/* Sticky Scroll To Top Button */}
@@ -69,4 +53,3 @@ export default function Home() {
     </main>
   );
 }
-
